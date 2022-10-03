@@ -4,12 +4,11 @@ import { useEffect } from 'react'
 import BooksList from '../components/BooksList/BooksList'
 import MainTemplate from '../components/MainTemplate'
 import { HomeProps } from '../types/types';
-import {en} from '../locales/en.js';
-import {ru} from '../locales/ru.js';
-
+ 
 
 const Home = ({ books, page, search, author }: HomeProps) => {
   const router = useRouter();
+  require('dotenv').config();
 
   useEffect(() => {
     document.addEventListener('scroll', scrollHandler)
@@ -17,7 +16,7 @@ const Home = ({ books, page, search, author }: HomeProps) => {
     return function () {
       document.removeEventListener('scroll', scrollHandler)
     }
-  }, [page, author])
+  }, [page])
 
   const scrollHandler = (e: Event) => {
     if ((e.target as Document).documentElement.scrollHeight - ((e.target as Document).documentElement.scrollTop + window.innerHeight) < 50) {
