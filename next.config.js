@@ -6,27 +6,11 @@ const nextConfig = {
 
 module.exports = nextConfig;
 
+
 module.exports = {
   i18n: {
     locales: ["en", "ru"],
     defaultLocale: "en",
+    localeDetection: false
   },
 };
-
-module.exports = (phase, { defaultConfig }) => {
-  return {
-    ...defaultConfig,
-
-    webpack: (config) => {
-      config.resolve = {
-        ...config.resolve,
-        fallback: {
-          "fs": false,
-          "path": false,
-          "os": false,
-        }
-      }
-      return config
-    },
-  }
-}

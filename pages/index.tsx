@@ -8,7 +8,6 @@ import { HomeProps } from '../types/types';
 
 const Home = ({ books, page, search, author }: HomeProps) => {
   const router = useRouter();
-  require('dotenv').config();
 
   useEffect(() => {
     document.addEventListener('scroll', scrollHandler)
