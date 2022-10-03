@@ -17,12 +17,12 @@ const MainTemplate = ({ title, children, search }: MainTemplateProps) => {
             <Head>
                 <title>{title}</title>
             </Head>
-            <header className="bg-white max-w-none items-center shadow-lg mb-5 flex p-3 justify-around">
+            <header className="bg-white max-w-none phone:flex phone:flex-col phone:gap-2 tablet:items-center tablet:flex tablet:flex-row shadow-lg mb-5 p-3 tablet:justify-around">
                 <Link href={'/'}>
-                    <h1 className="font-bold text-3xl text-violet-700 p-2.5 cursor-pointer">{t.books}</h1>
+                    <h1 className="font-bold text-3xl phone:mx-auto text-violet-700 cursor-pointer">{t.books}</h1>
                 </Link>
-                <div>
-                    <h4 className="text-s">{t.language}</h4>
+                <div className="phone:mx-auto flex flex-col items-center">
+                    <div className="font w-5"><img src="/icons/lang.png" alt="" /></div>
                     <div className="flex gap-1">
                         <ChangeLanguage href={router.asPath} locale={'en'}>EN</ChangeLanguage>
                         <ChangeLanguage href={router.asPath} locale={'ru'}>RU</ChangeLanguage>

@@ -12,7 +12,7 @@ export default function Book({ book, search }: IBookProps) {
     const t = router.locale === 'en' ? en : ru;
     return (
         <MainTemplate title={book.title} search={search}>
-            <div className="flex mt-6 bg-slate-200 rounded-xl p-5 max-w-max mx-auto">
+            <div className="phone:flex phone:flex-col phone:items-center tablet:flex tablet:flex-row mt-6 bg-slate-200 rounded-xl tablet:p-5 max-w-max mx-auto">
                 <div className="w-25 h-72 m-3">
                     <img className="max-w-none max-h-72 w-52 rounded-lg" src={book.formats['image/jpeg']} alt="" />
                 </div>
